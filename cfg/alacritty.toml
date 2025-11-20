@@ -1,0 +1,6 @@
+[window]
+opacity = 0.9
+blur = true
+
+[terminal]
+shell = { program = "/home/navi/.nix-profile/bin/fish", args = ["-l"] }

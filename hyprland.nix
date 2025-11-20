@@ -43,16 +43,21 @@ in
 	  render_power = 3;
 	  color = "rgba(00000055)";
 	};
-
-	animations = {
-	  enabled = true;
-	};
       };
 
       bind = [
-	"$mainMod, T, exec, ${terminal}"
+	"$mainMod, RETURN, exec, ${terminal}"
 	"$mainMod, F, exec, ${browser}"
 	"$mainMod, SPACE, exec, ${menu}"
+	"$mainMod, W, killactive"
+	# Work spaces
+	"$mainMod, 1, workspace, 1"
+	"$mainMod, 2, workspace, 2"
+	"$mainMod, 3, workspace, 3"
+	"$mainMod, 4, workspace, 4"
+	# Scroll workspaces
+	"$mainMod, mouse_down, workspace, e+1"
+	"$mainMod, mouse_up, workspace, e-1"
       ];
     };
 }

@@ -2,17 +2,30 @@
 
 {
   imports = [
+    
   ];
 
-  home-manager.users.navi = {
+  programs.fish.enable = true;
+
+  users.users.navi = {
+    isNormalUser = true;
+    description = "Ivan";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
+    shell = pkgs.fish;
   };
 
-  home-manager.backupFileExtension = "backup";
-
   environment.systemPackages = with pkgs; [
+    alacritty
     discord
     pavucontrol
+    protonmail-desktop
+    todoist-electron
     waybar
+    wineWowPackages.stable
+    vlc
   ];
 
   programs.steam = {
@@ -23,4 +36,6 @@
   };
 
   programs.hyprland.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
 }

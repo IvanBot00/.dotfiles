@@ -3,6 +3,8 @@
 {
   imports = [
     ./hyprland.nix
+    ./waybar.nix
+    ./wpaperd.nix
   ];
 
   home.username = "navi";
@@ -10,8 +12,6 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
-
-  programs.zsh.enable = true;
 
   programs.git = {
     enable = true;
@@ -23,42 +23,18 @@
     };
   };
 
-  programs.neovim = {
+  programs.helix = {
     enable = true;
     defaultEditor = true;
+  };
+
+  programs.neovim = {
+    enable = true;
     viAlias = true; 
   };
 
   programs.alacritty = {
     enable = true;
-  };
-
-  programs.waybar = {
-    enable = true;
-
-    settings = {
-      mainBar = {
-	layer = "top";
-	position = "top";
-	height = 30;
-	spacing = 10;
-
-	modules-right = [ "pulseaudio" "network" ];
-
-	# modules-right
-	"pulseaudio" = {
-	  format = "{volume}%";
-	  scroll-step = 5;
-	};
-
-	"network" = {
-	  format-wifi = "{essid} ({signalStrength}%";
-	  format-ethernet = "{ifname}";
-	  format-disconnected = "X";
-	};
-
-      };
-    };
   };
 
   programs.fuzzel = {
